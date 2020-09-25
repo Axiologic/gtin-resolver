@@ -1,11 +1,15 @@
-const keyssiSpace = require("opendsu").loadApi("keyssi");
+const openDSU = require("opendsu");
+const keyssiSpace = openDSU.loadApi("keyssi");
+const crypto = openDSU.loadApi("crypto");
 
 function GTIN_SSI(arraySSI) {
     this.getName = () => {
         return "gtin";
     };
 
-    const publicFunctions = ['getDLDomain', 'getSpecificString', 'getVn', 'getHint', 'getAnchorId', 'getEncryptionKey'];
+    arraySSI.getName = this.getName;
+
+    const publicFunctions = ['getDLDomain', 'getSpecificString', 'getVn', 'getHint', 'getAnchorId', 'getEncryptionKey', 'getIdentifier'];
     publicFunctions.forEach(functionName => this[functionName] = arraySSI[functionName]);
 }
 
@@ -16,9 +20,9 @@ function createGTIN_SSI(domain, gtin, batch, expiration, serialNumber) {
 }
 
 function parseGTIN_SSI(ssiIdentifier) {
-    ssiIdentifier.replace("gtin", "array");
     let realSSI = keyssiSpace.parse(ssiIdentifier);
     let gtinSSI = new GTIN_SSI(realSSI);
+    return gtinSSI;
 }
 
 module.exports = {
