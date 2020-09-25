@@ -1,8 +1,8 @@
 const openDSU = require("opendsu");
 const keyssiSpace = openDSU.loadApi("keyssi");
-const crypto = openDSU.loadApi("crypto");
 
 function GTIN_SSI(arraySSI) {
+
     this.getName = () => {
         return "gtin";
     };

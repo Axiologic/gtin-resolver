@@ -4,6 +4,7 @@ function GTIN_DSU_Factory(resolver) {
             callback = options;
             options = {};
         }
+
         options.dsuFactoryType = "const";
         resolver.createDSU(keySSI, options, callback);
     };
