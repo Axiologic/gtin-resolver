@@ -1,6 +1,6 @@
 const openDSU = require("opendsu");
 const resolver = openDSU.loadApi("resolver");
-const GtinDSUFactory = require("./GTIN_DSU_Factory");
+const GtinDSUFactory = require("./lib/GTIN_DSU_Factory");
 
 resolver.registerDSUFactory("gtin", new GtinDSUFactory(resolver));
-module.exports = require("./GTIN_SSI");
+module.exports = require("./lib/GTIN_SSI");

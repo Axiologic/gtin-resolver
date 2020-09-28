@@ -1,0 +1,3 @@
+{
+  "gtinResolver":{"deps":"./../../index.js","autoLoad":true}
+}

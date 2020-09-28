@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node ./node_modules/octopus/scripts/run build"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Axiologic/gtin-resolver/issues"
   },
-  "homepage": "https://github.com/Axiologic/gtin-resolver#readme"
+  "homepage": "https://github.com/Axiologic/gtin-resolver#readme",
+  "dependencies": {
+    "octopus": "git+http://github.com/privatesky/octopus.git#1.0.4"
+  }
 }
